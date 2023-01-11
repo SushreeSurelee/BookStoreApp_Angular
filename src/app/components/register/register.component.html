@@ -1,0 +1,40 @@
+<div class="outer-container">
+
+    <div class="logo-container">
+        <img class="logo" src="../../../assets/login.png">
+        <p class="text">ONLINE BOOK SHOPPING</p>
+    </div>
+
+    <div class="login-signup">
+        <div class="header">
+            <button class="login" routerLink="/login">LOGIN</button>
+            <button class="signup" >SIGNUP</button>
+        </div>
+
+        <div class="signup-container">
+            <div class="input-fields">
+              <form [formGroup]="SignUpForm" (ngSubmit)="onSubmit()">
+                <mat-label>Full Name</mat-label>
+                <mat-form-field appearance="outline">
+                  <input class="input" formControlName="fullName" matInput type="text" />
+                </mat-form-field>
+                <mat-label>Email Id</mat-label>
+                <mat-form-field appearance="outline">
+                  <input class="input" formControlName="email" matInput type="email" />
+                </mat-form-field>
+                <mat-label>Password</mat-label>
+                <mat-form-field appearance="outline">
+                  <input type="password" class="input" formControlName="password" matInput type="password" />
+                </mat-form-field>
+                <mat-label>Mobile Number</mat-label>
+                <mat-form-field appearance="outline">
+                  <input class="input" formControlName="phone" matInput type="text" />
+                </mat-form-field>
+                  <button class="Signup-btn" mat-raised-button>
+                    SignUp
+                  </button>
+              </form>
+            </div>
+          </div>
+    </div>
+</div>
