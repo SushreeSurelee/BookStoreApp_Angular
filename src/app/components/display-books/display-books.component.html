@@ -1,0 +1,40 @@
+<div>
+    <div class="books">
+        <div class="bookHead" fxLayout="row" fxLayoutAlign="start center">
+            <span style="font-size: 22px; font-weight: 500;">Books</span>
+            <span class="booksCount">({{booksList.length}})</span>
+        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>Sort by relevence</mat-label>
+            <mat-select>
+                <mat-option>Sort by relevence</mat-option>
+                <mat-option>Price -- Low to High</mat-option>
+                <mat-option>Price -- High to low</mat-option>
+                <mat-option>Newest First</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="display-books">
+        <mat-card class="book" *ngFor="let book of booksList">
+            <div class="book-image">
+                <img [src]="book.bookImage" width="125px" height="170px">
+            </div>
+            <div class="book-details">
+                <span class="bookName">{{book.bookName}}</span>
+                <span class="authorName"> by {{book.author}}</span>
+                <div class="rating-count">
+                    <div class="rating">
+                        <span>4.5</span>
+                        <img src="../../../assets/star.svg" width="12px">
+                    </div>
+                    <span class="reviewerCount">(20)</span>
+                </div>
+                <div>
+                    <span class="discountPrice">Rs. {{book.discountPrice}}</span>
+                    <span class="originalPrice">Rs. {{book.price}}</span>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
