@@ -22,7 +22,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
 import { DisplayBooksComponent } from './components/display-books/display-books.component';
-
+import { QuickViewComponent } from './components/quick-view/quick-view.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { DisplayBooksComponent } from './components/display-books/display-books.
     HeaderComponent,
     DashboardComponent,
     GetAllBooksComponent,
-    DisplayBooksComponent
+    DisplayBooksComponent,
+    QuickViewComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { DisplayBooksComponent } from './components/display-books/display-books.
     MatSnackBarModule,
     MatMenuModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

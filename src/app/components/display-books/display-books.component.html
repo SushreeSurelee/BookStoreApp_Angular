@@ -7,17 +7,16 @@
         <mat-form-field appearance="outline">
             <mat-label>Sort by relevence</mat-label>
             <mat-select>
-                <mat-option>Sort by relevence</mat-option>
-                <mat-option>Price -- Low to High</mat-option>
-                <mat-option>Price -- High to low</mat-option>
-                <mat-option>Newest First</mat-option>
+                <mat-option (click)="PriceLowToHigh()">Price:Low to High</mat-option>
+                <mat-option (click)="PriceHighToLow()">Price:High to Low</mat-option>
+                <mat-option (click)="newestFirst()">Newest Arrivals</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
 
     <div class="display-books">
         <mat-card class="book" *ngFor="let book of booksList">
-            <div class="book-image">
+            <div class="book-image" routerLink="/dashboard/quick-view/" (click)="quickView(book.bookId)">
                 <img [src]="book.bookImage" width="125px" height="170px">
             </div>
             <div class="book-details">
@@ -25,14 +24,14 @@
                 <span class="authorName"> by {{book.author}}</span>
                 <div class="rating-count">
                     <div class="rating">
-                        <span>4.5</span>
+                        <span>{{book.bookRating}}</span>
                         <img src="../../../assets/star.svg" width="12px">
                     </div>
-                    <span class="reviewerCount">(20)</span>
+                    <span class="reviewerCount">({{book.ratingCount}})</span>
                 </div>
                 <div>
                     <span class="discountPrice">Rs. {{book.discountPrice}}</span>
-                    <span class="originalPrice">Rs. {{book.price}}</span>
+                    <span class="originalPrice">Rs. {{book.actualPrice}}</span>
                 </div>
             </div>
         </mat-card>

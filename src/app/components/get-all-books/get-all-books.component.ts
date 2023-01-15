@@ -19,11 +19,8 @@ export class GetAllBooksComponent implements OnInit  {
 
   getBooks(){
     this.bookService.getAllBooks().subscribe((response : any)=>{
-      this.bookArray = response.result
+      this.bookArray = response.data
       console.log('All Books details',response)
     })
   }
-
-
-
 }

@@ -27,13 +27,13 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     if(this.loginForm.valid){
       let payload = {
-        email: this.loginForm.value.email,
+        emailId: this.loginForm.value.email,
         password: this.loginForm.value.password
       }
       console.log('payload',payload)
       this.user.login(payload).subscribe((response: any) => {
         console.log("login sucessfull",response);
-        localStorage.setItem('token',response.result.accessToken);
+        localStorage.setItem('token',response.data);
         this.router.navigateByUrl('/dashboard/books')
 
         this.snackbar.open('You have logged in successfully', '', {

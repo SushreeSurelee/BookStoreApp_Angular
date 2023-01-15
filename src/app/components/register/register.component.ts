@@ -30,9 +30,9 @@ export class RegisterComponent implements OnInit {
       
       let payload = {
         fullName: this.SignUpForm.value.fullName,
-        email: this.SignUpForm.value.email,
+        emailId: this.SignUpForm.value.email,
         password: this.SignUpForm.value.password,
-        phone: this.SignUpForm.value.phone,
+        mobileNumber: this.SignUpForm.value.phone,
       }
       console.log('payload',payload)
       this.userService.signup(payload).subscribe((response: any) => {

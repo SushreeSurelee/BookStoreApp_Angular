@@ -1,0 +1,72 @@
+<div class="main-div">
+    <div>
+        <span class="home" routerLink="/dashboard/books">Home / </span>
+        <span style="color: black; font-weight: 500;">Book({{book.bookId}})</span>
+    </div>
+
+    <div class="display-book">
+        <div>
+            <div class="img-box">
+                <img [src]="book.bookImage" class="s-image">
+                <div class="book-image">
+                    <img [src]="book.bookImage">
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="bag" mat-flat-button>ADD TO BAG</button>
+                <button class="wishlist" mat-flat-button>
+                    <img src="/assets/favorite_white_24dp.svg" width="18px" height="18px"> WISHLIST</button>
+            </div>
+        </div>
+
+        <div class="book-details">
+            <h3 class="bookName">{{book.bookName}}</h3>
+            <span class="authorName">by {{book.author}}</span>
+            <div class="rating-count">
+                <div class="rating">
+                    <span>{{book.bookRating}}</span>
+                    <img src="../../../assets/star.svg" width="14px">
+                </div>
+                <span class="reviewerCount">({{book.ratingCount}})</span>
+            </div>
+            <div class="prices">
+                <div><span class="discountPrice">Rs.{{book.discountPrice}}</span></div>
+                <div><span class="originalPrice">Rs.{{book.actualPrice}}</span></div>
+            </div>
+            <mat-divider></mat-divider>
+
+            <div>
+                <ul class="book-detail">
+                    <li>Book Detail</li>
+                </ul>
+                <span class="detail">{{book.bookDetail}}</span>
+            </div>
+            <mat-divider></mat-divider>
+
+            <h3 style="margin-top: 10px; margin-bottom: 10px">Customer Feedback</h3>
+            <div class="O-rating">
+                <h4>Overall rating</h4>
+                <div class="starContainer">
+                    <input type="radio" name="rate" id="rate-1" value="1">
+                    <label for="rate-1"><img src="../../../assets/star-gray.svg" width="22px"></label>
+
+                    <input type="radio" name="rate" id="rate-2" value="2">
+                    <label for="rate-2"><img src="../../../assets/star-gray.svg" width="22px"></label>
+
+                    <input type="radio" name="rate" id="rate-3" value="3">
+                    <label for="rate-3"><img src="../../../assets/star-gray.svg" width="22px"></label>
+
+                    <input type="radio" name="rate" id="rate-4" value="4">
+                    <label for="rate-4"><img src="../../../assets/star-gray.svg" width="22px"></label>
+
+                    <input type="radio" name="rate" id="rate-5" value="5">
+                    <label for="rate-5"><img src="../../../assets/star-gray.svg" width="22px"></label>
+
+                </div>
+                <textarea matInput class="feedbackInput" type="text" placeholder="write a review"
+                    name="comment"></textarea>
+                <button class="btn">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

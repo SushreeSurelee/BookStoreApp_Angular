@@ -4,6 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
+import { QuickViewComponent } from './components/quick-view/quick-view.component';
 import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent,
 children:[
   {path: 'books', component:GetAllBooksComponent},
+  {path: 'quick-view', component:QuickViewComponent},
 ]},
 ];
 
