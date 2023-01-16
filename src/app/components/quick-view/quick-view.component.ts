@@ -14,14 +14,21 @@ export class QuickViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.bookId = localStorage.getItem('bookId')
-    this.getBookById(this.bookId);
+    this.getBookById();
   }
 
-  getBookById(bookId:any){
-    this.bookService.getBookById(bookId).subscribe((response:any)=>{
+  getBookById(){
+    this.bookService.getBookById(this.bookId).subscribe((response:any)=>{
       console.log('quick view of book',response.data)
       this.book = response.data;
     })
-
+  }
+  addToWishlist(){
+    let payload ={
+      bookId : this.book.bookId
+    }
+    this.bookService.addToWishlist(payload,this.bookId).subscribe((response:any)=>{
+      console.log(response)
+    })
   }
 }

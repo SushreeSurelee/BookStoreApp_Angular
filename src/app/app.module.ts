@@ -24,6 +24,7 @@ import { GetAllBooksComponent } from './components/get-all-books/get-all-books.c
 import { DisplayBooksComponent } from './components/display-books/display-books.component';
 import { QuickViewComponent } from './components/quick-view/quick-view.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {MatDividerModule} from '@angular/material/divider';
     DashboardComponent,
     GetAllBooksComponent,
     DisplayBooksComponent,
-    QuickViewComponent
+    QuickViewComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

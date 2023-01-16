@@ -31,5 +31,35 @@ export class BookService {
     return this.httpService.getService(`/Book/GetBookbyID?bookId=${bookId}`,true,header)
   }
 
+  addToWishlist(requestData: any,bookId : any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.postService(`/Wishlist/AddToWishlist?bookId=${bookId}`,requestData,true,header)
+  }
+
+  getAllWishlist(){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.getService("/Wishlist/GetAllWishlist",true,header)
+  }
+
+  deleteWishlistItem(wishlistId : any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.deleteService(`/Wishlist/Delete?wishlistId=${wishlistId}`,true,header)
+  }
+
 
 }

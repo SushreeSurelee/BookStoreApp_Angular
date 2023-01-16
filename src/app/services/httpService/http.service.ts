@@ -23,8 +23,8 @@ export class HttpService {
 
   }
 
-  deleteService() {
-
+  deleteService(url: string,token: boolean = false, httpOptions: any) {
+    return this.httpClient.delete(this.baseurl+url,token && httpOptions)
   }
 
 }
