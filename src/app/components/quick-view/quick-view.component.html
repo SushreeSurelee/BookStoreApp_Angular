@@ -7,13 +7,16 @@
     <div class="display-book">
         <div>
             <div class="img-box">
-                <img [src]="book.bookImage" class="s-image">
+                <div class="side-images">
+                    <img [src]="book.bookImage" class="s-image">
+                    <img src="../../../assets/12111823._SY475_.jpg" class="s-image">
+                </div>
                 <div class="book-image">
                     <img [src]="book.bookImage">
                 </div>
             </div>
             <div class="buttons">
-                <button class="bag" mat-flat-button>ADD TO BAG</button>
+                <button class="bag" mat-flat-button (click)="addToCart()">ADD TO BAG</button>
                 <button class="wishlist" mat-flat-button routerLink="/dashboard/wishlist/" (click)="addToWishlist()">
                     <img src="/assets/favorite_white_24dp.svg" width="18px" height="18px"> WISHLIST</button>
             </div>

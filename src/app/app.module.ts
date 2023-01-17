@@ -20,11 +20,13 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
 import { GetAllBooksComponent } from './components/get-all-books/get-all-books.component';
 import { DisplayBooksComponent } from './components/display-books/display-books.component';
 import { QuickViewComponent } from './components/quick-view/quick-view.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     GetAllBooksComponent,
     DisplayBooksComponent,
     QuickViewComponent,
-    WishlistComponent
+    WishlistComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     MatMenuModule,
     MatCardModule,
     MatSelectModule,
-    MatDividerModule
+    MatDividerModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

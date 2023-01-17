@@ -61,5 +61,35 @@ export class BookService {
     return this.httpService.deleteService(`/Wishlist/Delete?wishlistId=${wishlistId}`,true,header)
   }
 
+  addToCart(requestData : any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.postService("/Cart/Add",requestData,true,header)
+  }
+
+  getCart(){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.getService("/Cart/GetCart",true,header)
+  }
+
+  deleteCart(cartId:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.deleteService(`/Cart/Delete?cartId=${cartId}`,true,header)
+  }
+
 
 }
