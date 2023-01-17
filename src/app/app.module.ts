@@ -27,7 +27,7 @@ import { QuickViewComponent } from './components/quick-view/quick-view.component
 import {MatDividerModule} from '@angular/material/divider';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CartComponent } from './components/cart/cart.component';
-
+import { AuthguardService } from './services/AuthguardService/authguard.service';
 
 @NgModule({
   declarations: [
@@ -61,7 +61,7 @@ import { CartComponent } from './components/cart/cart.component';
     MatDividerModule,
     MatRadioModule
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

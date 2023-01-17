@@ -1,5 +1,5 @@
 <div class="layout">
-<div>
+  <div>
     <span class="home" routerLink="/dashboard/books">Home / </span><span style="color: black; font-weight: 500;">My
       Cart</span>
   </div>
@@ -15,35 +15,33 @@
       </mat-form-field>
     </div>
     <div class="item" *ngFor="let cart of cartlist">
-      <div class="cart-items">
-        <div>
-          <img class="book-image" [src]="cart?.bookImage"
-            width="90px" height="110px">
+      <div>
+        <img class="book-image" [src]="cart?.bookImage" width="90px" height="110px">
+      </div>
+      <div class="book-details">
+        <h2 class="bookName">{{cart.bookName}}</h2>
+        <span class="authorName">by {{cart.author}}</span>
+        <div class="prices">
+          <div><span class="discountPrice">Rs. {{cart.discountPrice}}</span></div>
+          <div><span class="originalPrice">Rs. {{cart.actualPrice}}</span></div>
         </div>
-        <div class="book-details">
-          <h2 class="bookName">{{cart.bookName}}</h2>
-          <span class="authorName">by {{cart.author}}</span>
-          <div class="prices">
-            <div><span class="discountPrice">Rs. {{cart.discountPrice}}</span></div>
-            <div><span class="originalPrice">Rs. {{cart.actualPrice}}</span></div>
+        <div class="buttons">
+          <div class="plus-minus">
+            <button mat-stroked-button><i class="material-icons">&#xe15b;</i></button>
+            <span class="cartQty">{{cart.cartQuantity}}</span>
+            <button mat-stroked-button><i class="material-icons">&#xe145;</i></button>
           </div>
-          <div class="buttons">
-            <div class="plus-minus">
-              <button mat-stroked-button ><i class="material-icons">&#xe15b;</i></button>
-              <span class="cartQty">{{cart.cartQuantity}}</span>
-              <button mat-stroked-button><i class="material-icons">&#xe145;</i></button>
-            </div>
-            <button mat-stroked-button class="remove" (click)="removeFromCart(cart.cartId)"> Remove</button>
-          </div>
+          <button mat-stroked-button class="remove" (click)="removeFromCart(cart.cartId)"> Remove</button>
         </div>
       </div>
     </div>
     <button class="place-order-button" mat-flat-button>Place Order</button>
   </div>
+  
   <!-- Address details -->
   <div class="address">
     <div>
-      <span >Address Details</span>
+      <span>Address Details</span>
     </div>
   </div>
 

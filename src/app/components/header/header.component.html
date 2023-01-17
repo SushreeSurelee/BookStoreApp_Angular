@@ -13,9 +13,12 @@
         </div>
 
         <div class="profile-cart">
-            <button class="icons" mat-flat-button>
+            <button class="icons" mat-flat-button [matMenuTriggerFor]="logout">
                 <img src="../../../assets/person.svg" style="margin-top:10px;margin-left: 25px;" width="24px" height="24px">
-                <span style="margin-left: 23px;">Profile</span>
+                <span style="margin-left: 23px;" >Profile</span>
+                <mat-menu #logout="matMenu">
+                    <button mat-menu-item (click)="Logout()">Logout</button>
+                  </mat-menu>
             </button>
             <button class="icons" mat-flat-button>
                 <img src="../../../assets/cart.svg" style="margin-top:10px; margin-left: 25px;" width="24px" height="24px" routerLink="/dashboard/cart">
