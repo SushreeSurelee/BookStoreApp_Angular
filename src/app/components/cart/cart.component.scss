@@ -4,18 +4,13 @@
   padding-right: 12%;
   margin-top: 5px;
   height: fit-content;
-
 }
 
-.count {
+.Mycart {
   width: 70%;
   margin-top: 10px;
   padding-left: 25px;
   border: 1px solid lightgray;
-}
-
-::ng-deep .mat-form-field {
-  font-size: 32px; // example
 }
 
 .cart-detail {
@@ -141,7 +136,7 @@
 }
 
 .place-order-button {
-  margin-left: 600px;
+  margin-left: 450px;
   width: 151px;
   height: 35px;
   background-color: #3371B5;
@@ -149,7 +144,7 @@
   color: white;
 }
 
-.address{
+.address {
   padding: 15px;
   width: 68.7%;
   margin-top: 10px;
@@ -157,38 +152,143 @@
   border: 1px solid lightgray;
 }
 
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.details span{
+  size: 30px;
+}
+
+.address-inputs {
+  display: flex;
+  flex-direction: row;
+}
+
+.edit {
+  color: #A03037;
+  margin-left: 20px;
+  border: none;
+  background-color: white;
+}
+
+.address-values {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.address-box {
+  color: #878787;
+  border: 1px solid #DCDCDC;
+  background-color: #F5F5F5;
+  width: 70%;
+  height: 82px;
+}
+
+.state-city {
+  display: flex;
+  flex-direction: column;
+}
+
+.city-state {
+  width: 70%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.city {
+  color: #878787;
+  border: 1px solid #DCDCDC;
+  background-color: #F5F5F5;
+  width: 251px;
+  height: 45px;
+}
+
+.state {
+  color: #878787;
+  border: 1px solid #DCDCDC;
+  background-color: #F5F5F5;
+  width: 251px;
+  height: 45px;
+}
+
+.continue-btn{
+  margin-left: 585px;
+  width: 151px;
+  height: 35px;
+  background-color: #3371B5;
+  border: none;
+  color: white;
+}
 
 input.mat-input-element {
   margin-bottom: 7px;
 }
 
-.textarea-address{
-  overflow: hidden; 
-  resize: none !important; 
-  word-wrap: break-word; 
-  border: 1px solid lightgray; 
-  padding: 10px; 
-  width: calc((100%) - 20px); 
-  margin-bottom: 20px; 
+.textarea-address {
+  overflow: hidden;
+  resize: none !important;
+  word-wrap: break-word;
+  border: 1px solid lightgray;
+  padding: 10px;
+  width: calc((100%) - 20px);
+  margin-bottom: 20px;
   border-radius: 4px;
 }
 
-.type{
+.type {
   margin: 10px 0px;
 }
-.type mat-radio-button{
+
+.type mat-radio-button {
   margin: 0px 50px 0px 0px;
 }
-.add-new{
+
+.add-new {
   margin-left: 200px;
-  color:#A03037; 
-  border:1px solid #A03037;
+  color: #A03037;
+  border: 1px solid #A03037;
+  background-color: white;
+  width: 150px;
+  height: 35px;
 }
 
-.order-summary{
+.order-item{
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
+.order-book-details{
+  padding: 0px 25px;
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  border: 1px solid #A03037;
+}
+
+.order-summary {
   padding: 15px;
   width: 68.7%;
   margin-top: 10px;
   padding-left: 25px;
   border: 1px solid lightgray;
+}
+
+.checkout-btn{
+  margin-left: 450px;
+  width: 151px;
+  height: 35px;
+  background-color: #3371B5;
+  border: none;
+  color: white;
 }

@@ -10,12 +10,14 @@ import { BookService } from 'src/app/services/bookService/book.service';
 export class QuickViewComponent implements OnInit {
   book:any;
   bookId : any;
+  feedbackList: any
 
   constructor(private bookService: BookService, private snackbar : MatSnackBar){}
 
   ngOnInit(): void {
     this.bookId = localStorage.getItem('bookId')
     this.getBookById();
+    this.getFeedback(this.bookId);
   }
 
   getBookById(){
@@ -49,5 +51,16 @@ export class QuickViewComponent implements OnInit {
         horizontalPosition:'right'
       })
     })
+  }
+
+  getFeedback(bookId:any){
+    this.bookService.getFeedback(bookId).subscribe((response : any)=>{
+      console.log(response)
+      this.feedbackList = response.data
+    })
+  }
+
+  getShortName(name:any){
+    return name.split(' ').map((n:any) => n[0]).join('');
   }
 }

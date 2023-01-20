@@ -11,6 +11,8 @@ export class HeaderComponent {
   constructor(private router : Router){}
   Logout(){
     localStorage.removeItem('token');
+    localStorage.removeItem('bookId');
+    localStorage.removeItem('addressId');
     this.router.navigateByUrl("/login")
   }
 

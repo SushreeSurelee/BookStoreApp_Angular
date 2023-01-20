@@ -28,6 +28,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AuthguardService } from './services/AuthguardService/authguard.service';
+import { OrderPlacedComponent } from './components/order-placed/order-placed.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AuthguardService } from './services/AuthguardService/authguard.service'
     DisplayBooksComponent,
     QuickViewComponent,
     WishlistComponent,
-    CartComponent
+    CartComponent,
+    OrderPlacedComponent
   ],
   imports: [
     BrowserModule,

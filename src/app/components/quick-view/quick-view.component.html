@@ -70,6 +70,27 @@
                     name="comment"></textarea>
                 <button class="btn">Submit</button>
             </div>
+            <div class="feedbackList" *ngFor="let feedback of feedbackList" fxLayout="column">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                  <button class="short-name" mat-stroked-button mat-icon-button style="font-size: 12px;">{{getShortName(feedback?.fullName) }}</button>
+                  <span style="margin-left: 10px; font-size: 16px;">{{feedback?.fullName}}</span>
+                </div>
+                <div class="review">
+                  <div>
+                    <img src="../../../assets/star-gray.svg" width="22px" for="rate-1" *ngIf="feedback.bookRating<1">
+                    <img src="../../../assets/star-yellow.svg" width="22px" for="rate-1" *ngIf="feedback.bookRating>=1">
+                    <img src="../../../assets/star-gray.svg" width="22px" for="rate-2" *ngIf="feedback.bookRating<2">
+                    <img src="../../../assets/star-yellow.svg" width="22px" for="rate-2" *ngIf="feedback.bookRating>=2">
+                    <img src="../../../assets/star-gray.svg" width="22px" for="rate-3" *ngIf="feedback.bookRating<3">
+                    <img src="../../../assets/star-yellow.svg" width="22px" for="rate-3" *ngIf="feedback.bookRating>=3">
+                    <img src="../../../assets/star-gray.svg" width="22px" for="rate-4" *ngIf="feedback.bookRating<4">
+                    <img src="../../../assets/star-yellow.svg" width="22px" for="rate-4" *ngIf="feedback.bookRating>=4">
+                    <img src="../../../assets/star-gray.svg" width="22px" for="rate-5" *ngIf="feedback.bookRating<5">
+                    <img src="../../../assets/star-yellow.svg" width="22px" for="rate-5" *ngIf="feedback.bookRating>=5">
+                  </div>
+                    <span class="comment">{{feedback?.comment}}</span>
+                </div>
+              </div>
         </div>
     </div>
 </div>

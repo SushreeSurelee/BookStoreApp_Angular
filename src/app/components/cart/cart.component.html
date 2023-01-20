@@ -4,7 +4,7 @@
       Cart</span>
   </div>
   <!-- cart details -->
-  <div class="count">
+  <div class="Mycart">
     <div class="cart-detail">
       <span style="color: black; font-weight: 500;">My Cart({{cartlist.length}})</span>
       <mat-form-field appearance="outline">
@@ -33,15 +33,45 @@
           </div>
           <button mat-stroked-button class="remove" (click)="removeFromCart(cart.cartId)"> Remove</button>
         </div>
+        <button class="place-order-button" mat-flat-button (click)="openAddress()">Place Order</button>
       </div>
     </div>
-    <button class="place-order-button" mat-flat-button>Place Order</button>
   </div>
-  
+
   <!-- Address details -->
   <div class="address">
     <div>
-      <span>Address Details</span>
+      <span *ngIf="buttonState ==0">Address Details</span>
+    </div>
+    <div class="addressBar" *ngIf="buttonState>=1">
+      <div class="details">
+        <span>Customer Details</span>
+        <button class="add-new">Add New Address</button>
+      </div>
+      <div *ngFor="let address of addressList">
+        <div class="address-inputs">
+          <input type="radio" class="addresstype" [name]="address" [id]="address.addressId" [(ngModel)]="addressId"
+            [value]="address.addressId">
+          <span><b> {{addressList.indexOf(address)+1}}{{address.type==1? ' . HOME' : address.type==2? ' . WORK' : ' . OTHER'}} </b></span>
+          <button mat-flat-button class="edit">Edit</button>
+        </div>
+        <div class="address-values">
+          <mat-label *ngIf="addressId!=address.addressId"><b>Address</b></mat-label>
+          <div class="address-box" *ngIf="addressId!=address.addressId">{{address.address}}</div>
+          <div class="city-state">
+            <div class="state-city">
+              <mat-label *ngIf="addressId!=address.addressId"><b>city/town</b></mat-label>
+              <div class="city" *ngIf="addressId!=address.addressId">{{address.city}}</div>
+            </div>
+            <div class="state-city">
+              <mat-label *ngIf="addressId!=address.addressId"><b>State</b></mat-label>
+              <div class="state" *ngIf="addressId!=address.addressId">{{address.state}}</div>
+            </div>
+          </div>
+        </div>
+        <button mat-flat-button class="continue-btn" type="submit" (click)="openOrder(address.addressId)"
+        *ngIf="buttonState>=1">Continue</button>
+      </div>
     </div>
   </div>
 
@@ -50,5 +80,19 @@
     <div>
       <span>OrderSummary</span>
     </div>
-  </div>
-</div>
+    <div *ngIf="buttonState==2">
+      <div class="order-item" *ngFor="let cart of cartlist">
+        <div>
+          <img class="book-image" [src]="cart?.bookImage" width="90px" height="110px">
+        </div>
+        <div class="book-details">
+          <h2 class="bookName">{{cart.bookName}}</h2>
+          <span class="authorName">by {{cart.author}}</span>
+          <div class="prices">
+            <div><span class="discountPrice">Rs. {{cart.discountPrice}}</span></div>
+            <div><span class="originalPrice">Rs. {{cart.actualPrice}}</span></div>
+          </div>
+          <button class="checkout-btn" mat-flat-button (click)="addOrder()">CHECKOUT</button>
+        </div>
+      </div>
+    </div>

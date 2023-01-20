@@ -9,6 +9,7 @@ import { QuickViewComponent } from './components/quick-view/quick-view.component
 import { RegisterComponent } from './components/register/register.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { OrderPlacedComponent } from './components/order-placed/order-placed.component';
 
 const routes: Routes = [
   {path:'', redirectTo:"/login",pathMatch:'full'},
@@ -20,6 +21,7 @@ children:[
   {path: 'quick-view', component:QuickViewComponent},
   {path: 'wishlist', component:WishlistComponent},
   {path: 'cart', component:CartComponent},
+  {path: 'order-placed', component:OrderPlacedComponent},
 ]},
 ];
 
