@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         this.snackbar.open('You have logged in successfully', '', {
           duration: 3000,
           verticalPosition: 'bottom',
-          horizontalPosition:'right'
+          horizontalPosition:'center'
         })
       })
     }

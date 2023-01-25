@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
         this.snackbar.open('you have sucessfully registred', '', {
           duration: 3000,
           verticalPosition: 'bottom',
-          horizontalPosition:'right'
+          horizontalPosition:'center'
         })
       })
     }

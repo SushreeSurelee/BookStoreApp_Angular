@@ -8,10 +8,12 @@ import { BookService } from 'src/app/services/bookService/book.service';
   styleUrls: ['./quick-view.component.scss']
 })
 export class QuickViewComponent implements OnInit {
-  book:any;
+  books:any;
   bookId : any;
   feedbackList: any
-
+  addToBag :boolean = true
+  ratingPoint:any=0
+  comment : any
   constructor(private bookService: BookService, private snackbar : MatSnackBar){}
 
   ngOnInit(): void {
@@ -23,34 +25,54 @@ export class QuickViewComponent implements OnInit {
   getBookById(){
     this.bookService.getBookById(this.bookId).subscribe((response:any)=>{
       console.log('quick view of book',response.data)
-      this.book = response.data;
+      this.books = response.data;
     })
   }
   addToWishlist(){
     let payload ={
-      bookId : this.book.bookId
+      bookId : this.books.bookId
     }
     this.bookService.addToWishlist(payload,this.bookId).subscribe((response:any)=>{
       this.snackbar.open('book has been added to wishlist', '', {
         duration: 3000,
         verticalPosition: 'bottom',
-        horizontalPosition:'right'
+        horizontalPosition:'center'
       })
     })
   }
   addToCart(){
     let payload = {
-      bookId : this.book.bookId,
+      bookId : this.books.bookId,
       cartQuantity : 1
     }
+    this.addToBag = false
     this.bookService.addToCart(payload).subscribe((response : any)=>{
       console.log(response)
       this.snackbar.open('book has been added to cart', '', {
         duration: 3000,
         verticalPosition: 'bottom',
-        horizontalPosition:'right'
+        horizontalPosition:'center'
       })
     })
+  }
+
+  addFeedback(){
+    let payload = {
+      bookRating : parseInt(this.ratingPoint),
+      comment : this.comment,
+      bookId : this.books.bookId
+    }
+    this.bookService.addFeedback(payload).subscribe((response : any)=>{
+      console.log(response)
+      this.getFeedback(this.bookId)
+      this.snackbar.open('Your feedback is added', '', {
+        duration: 3000,
+        verticalPosition: 'bottom',
+        horizontalPosition:'center'
+      })
+    })
+    this.comment='';
+    this.ratingPoint=0;
   }
 
   getFeedback(bookId:any){

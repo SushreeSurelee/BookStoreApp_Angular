@@ -48,7 +48,7 @@ export class CartComponent implements OnInit {
       this.snackbar.open('book has been removed from cart', '', {
         duration: 3000,
         verticalPosition: 'bottom',
-        horizontalPosition:'right'
+        horizontalPosition:'center'
       })
     })
   }

@@ -29,9 +29,10 @@ export class WishlistComponent implements OnInit  {
       this.snackbar.open('book has been removed from wishlist', '', {
         duration: 3000,
         verticalPosition: 'bottom',
-        horizontalPosition:'right'
+        horizontalPosition:'center'
       })
     })
+    this.getWishlist();
   }
   
 
