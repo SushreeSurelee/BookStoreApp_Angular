@@ -26,13 +26,14 @@ export class WishlistComponent implements OnInit  {
   deleteWishItem(wishlistId:any){
     this.bookService.deleteWishlistItem(wishlistId).subscribe((response : any) =>
     {
+      this.getWishlist();
       this.snackbar.open('book has been removed from wishlist', '', {
         duration: 3000,
         verticalPosition: 'bottom',
         horizontalPosition:'center'
       })
     })
-    this.getWishlist();
+    
   }
   
 

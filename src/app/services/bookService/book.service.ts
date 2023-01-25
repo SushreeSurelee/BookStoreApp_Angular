@@ -121,6 +121,16 @@ export class BookService {
     return this.httpService.postService("/Order/AddOrder",requestData,true,header)
   }
 
+  getOrder(){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.getService("/Order/Getorders",true,header)
+  }
+
   addFeedback(requestData : any){
     let header = {
       headers: new HttpHeaders({

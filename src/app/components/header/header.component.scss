@@ -103,16 +103,12 @@ input.mat-input-element {
   margin: 10px 10px;
   display: flex;
   flex-direction: row;
+  border: none;
+  background: none;
 }
 .profile-g img{
   margin: 0px 5px;
-}
-
-.login {
-  padding: 0px 36px;
-  margin: 5px 10px;
-  border: 1px solid #A03037;
-  color: #A03037;
+  width:20px;
 }
 
 .logout{
@@ -120,10 +116,7 @@ input.mat-input-element {
   margin: 10px 10px;
   border: 1px solid #A03037;
   color: #A03037;
-}
-
-.mat-toolbar-row,
-.mat-toolbar-single-row {
-  padding: 0 0px;
-  margin: 0px;
+  width: 123px;
+height: 33px;
+background: none;
 }

@@ -29,6 +29,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AuthguardService } from './services/AuthguardService/authguard.service';
 import { OrderPlacedComponent } from './components/order-placed/order-placed.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { OrderPlacedComponent } from './components/order-placed/order-placed.com
     QuickViewComponent,
     WishlistComponent,
     CartComponent,
-    OrderPlacedComponent
+    OrderPlacedComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
