@@ -15,18 +15,28 @@ export class CartComponent implements OnInit {
   addressId:any
   bookId : any
   AddressId : any
+  cartQty : any = 1
 
   constructor( private bookService : BookService,private snackbar: MatSnackBar){}
 
   ngOnInit(): void {
     this.bookId =localStorage.getItem('bookId')
-    
     this.getCart()
     this.getAddress()
   }
 
-  openAddress(){
+  placeOrder(cartId : any){
     this.buttonState = 1
+    console.log('CartQty',this.cartQty)
+    let payload = {
+      bookId : parseInt(this.bookId),
+      cartQuantity : this.cartQty
+    }
+    console.log('payload',payload)
+    this.bookService.updateCart(payload,cartId).subscribe((response : any)=>{
+      console.log(response.data)
+    })
+    
   }
   openOrder(addressId:any){
     this.buttonState = 2
@@ -39,6 +49,21 @@ export class CartComponent implements OnInit {
       console.log(response.data)
       this.cartlist = response.data
     })
+  }
+
+  decrease(){
+    if(this.cartQty <= 1)
+    {
+      this.cartQty = this.cartQty
+    }
+    else
+    {
+      this.cartQty = this.cartQty - 1
+    }
+    
+  }
+  increase(){
+    this.cartQty = this.cartQty +1
   }
 
   removeFromCart(cartId:any){
@@ -55,6 +80,10 @@ export class CartComponent implements OnInit {
 
  getAddress(){
   this.bookService.getAddress().subscribe((response:any)=>{
+    if(response.data == null)
+    {
+      this.addressList = null
+    }
     console.log(response.data)
     this.addressList = response.data
   })

@@ -16,7 +16,6 @@ export class UserService {
         'Content-Type': 'application/json'
       })
     }
-    // return this.httpService.postService("/bookstore_user/login", requestData, false, header)
     return this.httpService.postService("/User/Login", requestData, false, header)
   }
 
@@ -27,7 +26,6 @@ export class UserService {
         'Content-Type': 'application/json'
       })
     }
-    // return this.httpService.postService("/bookstore_user/registration", requestData, false, header)
     return this.httpService.postService("/User/Register", requestData, false, header)
   }
 }

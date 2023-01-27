@@ -6,7 +6,7 @@
   <!-- cart details -->
   <div class="Mycart">
     <div class="cart-detail">
-      <span style="color: black; font-weight: 500;">My Cart({{cartlist.length}})</span>
+      <span style="color: black; font-weight: 500;">My Cart({{cartlist?.length}})</span>
       <mat-form-field appearance="outline">
         <mat-label>Use current location</mat-label>
         <mat-select>
@@ -16,7 +16,7 @@
     </div>
     <div class="item" *ngFor="let cart of cartlist">
       <div>
-        <img class="book-image" [src]="cart?.bookImage" width="90px" height="110px">
+        <img class="book-image" [src]="cart.bookImage" width="90px" height="110px">
       </div>
       <div class="book-details">
         <h2 class="bookName">{{cart.bookName}}</h2>
@@ -27,13 +27,13 @@
         </div>
         <div class="buttons">
           <div class="plus-minus">
-            <button mat-stroked-button><i class="material-icons">&#xe15b;</i></button>
-            <span class="cartQty">{{cart.cartQuantity}}</span>
-            <button mat-stroked-button><i class="material-icons">&#xe145;</i></button>
+            <button (click)="decrease()"><i class="material-icons">&#xe15b;</i></button>
+            <span class="cartQty">{{cartQty}}</span>
+            <button (click)="increase()"><i class="material-icons">&#xe145;</i></button>
           </div>
           <button mat-stroked-button class="remove" (click)="removeFromCart(cart.cartId)"> Remove</button>
         </div>
-        <button class="place-order-button" mat-flat-button (click)="openAddress()">Place Order</button>
+        <button class="place-order-button" mat-flat-button (click)="placeOrder(cart.cartId)">Place Order</button>
       </div>
     </div>
   </div>
@@ -92,7 +92,7 @@
             <div><span class="discountPrice">Rs. {{cart.discountPrice}}</span></div>
             <div><span class="originalPrice">Rs. {{cart.actualPrice}}</span></div>
           </div>
-          <button class="checkout-btn" mat-flat-button (click)="addOrder()">CHECKOUT</button>
+          <button class="checkout-btn" mat-flat-button (click)="addOrder()" routerLink="/dashboard/order-placed">CHECKOUT</button>
         </div>
       </div>
     </div>

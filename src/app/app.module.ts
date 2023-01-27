@@ -30,6 +30,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { AuthguardService } from './services/AuthguardService/authguard.service';
 import { OrderPlacedComponent } from './components/order-placed/order-placed.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { OrdersComponent } from './components/orders/orders.component';
     WishlistComponent,
     CartComponent,
     OrderPlacedComponent,
-    OrdersComponent
+    OrdersComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

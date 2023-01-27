@@ -4,11 +4,12 @@
             Wishlist</span>
     </div>
     <div class="count">
-        <span style="color: black; font-weight: 500;">My Wishlist ({{wishlist.length}})</span>
+        <span style="color: black; font-weight: 500;">My Wishlist ({{wishlist?.length}})</span>
     </div>
+
     <div class="item" *ngFor="let wish of wishlist">
         <div class="wishlistItem">
-            <img class="book-image" [src]="wish.bookImage" >
+            <img class="book-image" [src]="wish.bookImage">
             <div class="book-details">
                 <h2 class="bookName">{{wish.bookName}}</h2>
                 <span class="authorName">by {{wish.author}}</span>
@@ -19,10 +20,7 @@
             </div>
         </div>
         <button class="material-icons" mat-icon-button (click)="deleteWishItem(wish.wishListId)">
-            <div >&#xe92b;</div>
+            <div>&#xe92b;</div>
         </button>
     </div>
 </div>
-<footer class="footer">
-    <span>Copyright © 2022, Bookstore Private Limited. All Rights Reserved</span>
-</footer>

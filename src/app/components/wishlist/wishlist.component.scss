@@ -16,6 +16,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: space-between;
     border: 1px solid lightgray;
     padding: 40px;
   
@@ -73,21 +74,8 @@
   }
 
   .material-icons{
-    margin-left: 700px;
     border: none;
     background-color: white;
   }
 
-  .footer{
-    width: 100%;
-    height: 50px;
-    background-color: #2E1D1E;
-    position: absolute;
-bottom: 0;
-    display: inline-block;
-    }
-    .footer span{
-        color: white;
-        margin-left: 185px;
-        margin-top: 20px;
-    }
+  

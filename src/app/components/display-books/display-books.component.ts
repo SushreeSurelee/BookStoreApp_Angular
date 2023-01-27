@@ -16,6 +16,7 @@ export class DisplayBooksComponent implements OnInit{
 
   quickView(bookId:any){
     localStorage.setItem('bookId',bookId)
+    
   }
   
   PriceLowToHigh(){

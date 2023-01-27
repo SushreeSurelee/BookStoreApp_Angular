@@ -1,4 +1,4 @@
-<div class="main-div">
+<div class="main-div" *ngIf="books != undefined">
     <div>
         <span class="home" routerLink="/dashboard/books">Home / </span>
         <span style="color: black; font-weight: 500;">Book({{books.bookId}})</span>

@@ -91,6 +91,16 @@ export class BookService {
     return this.httpService.deleteService(`/Cart/Delete?cartId=${cartId}`,true,header)
   }
 
+  updateCart(requestedData : any,cartId : any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.putService(`/Cart/Update?cartId=${cartId}`,requestedData,true,header)
+  }
+
   addAddress(requestData:any){
     let header = {
       headers: new HttpHeaders({
