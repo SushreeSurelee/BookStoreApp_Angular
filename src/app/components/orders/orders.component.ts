@@ -17,6 +17,10 @@ export class OrdersComponent implements OnInit {
 
   getOrders(){
     this.boosService.getOrder().subscribe((response : any)=>{
+      if(this.orderList ==null)
+      {
+        this.orderList == null
+      }
       this.orderList = response.data
       console.log(response.data)
     })

@@ -6,7 +6,7 @@
   <!-- cart details -->
   <div class="Mycart">
     <div class="cart-detail">
-      <span style="color: black; font-weight: 500;">My Cart({{cartlist?.length}})</span>
+      <span>My Cart({{cartlist?.length}})</span>
       <mat-form-field appearance="outline">
         <mat-label>Use current location</mat-label>
         <mat-select>
@@ -16,7 +16,7 @@
     </div>
     <div class="item" *ngFor="let cart of cartlist">
       <div>
-        <img class="book-image" [src]="cart.bookImage" width="90px" height="110px">
+        <img class="book-image" [src]="cart.bookImage">
       </div>
       <div class="book-details">
         <h2 class="bookName">{{cart.bookName}}</h2>
@@ -48,7 +48,7 @@
         <span>Customer Details</span>
         <button class="add-new">Add New Address</button>
       </div>
-      <div *ngFor="let address of addressList">
+      <div class="addressTab" *ngFor="let address of addressList">
         <div class="address-inputs">
           <input type="radio" class="addresstype" [name]="address" [id]="address.addressId" [(ngModel)]="addressId"
             [value]="address.addressId">
@@ -60,7 +60,7 @@
           <div class="address-box" *ngIf="addressId!=address.addressId">{{address.address}}</div>
           <div class="city-state">
             <div class="state-city">
-              <mat-label *ngIf="addressId!=address.addressId"><b>city/town</b></mat-label>
+              <mat-label *ngIf="addressId!=address.addressId"><b>City/Town</b></mat-label>
               <div class="city" *ngIf="addressId!=address.addressId">{{address.city}}</div>
             </div>
             <div class="state-city">

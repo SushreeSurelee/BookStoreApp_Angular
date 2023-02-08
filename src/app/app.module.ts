@@ -13,7 +13,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -31,6 +31,7 @@ import { AuthguardService } from './services/AuthguardService/authguard.service'
 import { OrderPlacedComponent } from './components/order-placed/order-placed.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ErrorInterceptorService } from './services/errorInterceptor/error-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,12 @@ import { FooterComponent } from './components/footer/footer.component';
     MatDividerModule,
     MatRadioModule
   ],
-  providers: [AuthguardService],
+  providers: [AuthguardService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

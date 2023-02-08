@@ -14,6 +14,7 @@ export class QuickViewComponent implements OnInit {
   addToBag :boolean = true
   ratingPoint:any=0
   comment : any
+  
   constructor(private bookService: BookService, private snackbar : MatSnackBar){}
 
   ngOnInit(): void {

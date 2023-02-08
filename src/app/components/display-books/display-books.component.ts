@@ -26,8 +26,4 @@ export class DisplayBooksComponent implements OnInit{
   PriceHighToLow(){ 
     this.booksList = this.booksList.sort((low: any, high: any) => high.discountPrice - low.discountPrice);
   }
-
-  newestFirst(){
-    this.booksList = this.booksList.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-  }
 }

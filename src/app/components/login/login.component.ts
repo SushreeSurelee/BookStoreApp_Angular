@@ -30,9 +30,7 @@ export class LoginComponent implements OnInit {
         emailId: this.loginForm.value.email,
         password: this.loginForm.value.password
       }
-      console.log('payload',payload)
       this.user.login(payload).subscribe((response: any) => {
-        console.log("login sucessfull",response);
         localStorage.setItem('token',response.data);
         this.router.navigateByUrl('/dashboard/books')
 
@@ -41,6 +39,8 @@ export class LoginComponent implements OnInit {
           verticalPosition: 'bottom',
           horizontalPosition:'center'
         })
+      },(error : any)=>{
+        console.log(error)
       })
     }
   }

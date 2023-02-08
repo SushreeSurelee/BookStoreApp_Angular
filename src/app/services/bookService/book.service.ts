@@ -3,7 +3,7 @@ import { HttpService } from '../httpService/http.service';
 import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' 
 })
 export class BookService {
 
